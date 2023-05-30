@@ -7,42 +7,62 @@ body{
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  background-color: #222;
+}
+h1{
+  font-size: 2.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 25px;
+  color: white;
 }
 .card{
-  background-color: brown;
-  width: 400px;
-  height: 300px;
+  max-width: 600px;
+  width: 100%;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  color: white;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 2px;
+  font-size: 3rem;
+}
+.cards-container .buttons{
+   margin-top: 30px;
 }
 .previous-button, .next-button{
-  font-size: 27px;
-  font-weight: bold;
-  background-color: rgba(250, 235, 215, 0.108);
-  color:#008080;
-  color: da;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  border: none;
+  font-size: 1.3rem;
+  border: 1px solid black;
+  padding: 15px 35px;
   cursor: pointer;
-  box-shadow: 2px 2px 8px black;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .previous-button{
-  margin-right: 40px;
-}
-.next-button{
-  margin-left: 40px;
+  margin-right: 50px;
 }
 .cards-container{
   display: flex;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+@media (max-width: 320px){
+  .card{
+    height: 300px;
+    font-size: 2.5rem;
+  }
+  .previous-button{
+    margin-right: 20px;
+  }
+  .previous-button, .next-button{
+    padding: 10px 25px;
+  }
+  h1{
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
 }
