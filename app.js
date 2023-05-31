@@ -1,65 +1,52 @@
+//get all the buttons and the image by their class names
 const previousButton = document.querySelector('.previous-button');
 
 const nextButton = document.querySelector('.next-button');
 
-const card = document.querySelector('.card');
+const image = document.querySelector('.image');
 
-//the cards to be displayed have been stored in an array
-let cards = [{
-  name: 'First Card',
-  'background-color': '#00ffff',
-  color: 'Black'
+//the images to be displayed have been stored in an array
+let images = [{
+image: 'images/image-1.jpg'
 },{
-  name: 'Second Card',
-  'background-color': 'Black',
-  color: 'White'
+  image: 'images/image-2.jpg'
 }, {
-  name: 'Third Card',
-  'background-color': 'Green',
-  color: 'White'
+  image: 'images/image-3.jpg'
 }, {
-  name: 'Fourth Card',
-  'background-color': '#008080',
-  color: 'White'
+  image: 'images/image-4.jpg'
 }, {
-  name: 'Fifth Card',
-  'background-color': 'Blue',
-  color: 'White'
+  image: 'images/image-5.jpg'
 }, {
-  name: 'Sixth Card',
-  'background-color': 'darkorange',
-  color: 'Black'
+  image: 'images/image-6.jpg'
 }, {
-  name: 'Seventh Card',
-  'background-color': 'aquamarine',
-  color: 'Black'
+  image: 'images/image-7.jpg'
 }];
 
-//display the first card when the page first loads
+//display the first image when the page first loads
 let i = 0;
-let currentCard = `
-    <div class="card" style="background-color: ${cards[i]["background-color"]}; color: ${cards[i].color}">
-       ${cards[i].name}
+let currentImage = `
+    <div class="image" >
+    <img src="${images[i].image}">
     </div>
     `;
-    card.innerHTML = currentCard;
+    image.innerHTML = currentImage;
 
-//fucntion to handle either to display the next card or the previous card
+//fucntion to handle either to display the next image or the previous image
 function updateFunction(){
-  let counter = cards[i];
-      let nextCard = `
-      <div class="card" style="background-color: ${counter["background-color"]}; color: ${counter.color};">
-        ${counter.name}
+  let counter = images[i];
+      let nextImage = `
+      <div class="image" >
+      <img src="${images[i].image}">
       </div>
       `;
-      card.innerHTML = nextCard;
+      image.innerHTML = nextImage;
 }
 
-//display the next card when the next-button is clicked
+//display the next image when the next-button is clicked
 nextButton.addEventListener('click', () => {
   previousButton.disabled = false;
     i ++;
-    if(i === cards.length-1){
+    if(i === images.length-1){
       updateFunction();
       nextButton.disabled = true;
     }
@@ -68,12 +55,12 @@ nextButton.addEventListener('click', () => {
     }
 });
 
-//set the visibility of previous-button to collapse when the page first loads
+//set the previous-button disability to true when the page first loads
 if(i === 0){
   previousButton.disabled = true;
 }
 
-//display the previous card when the previous-button is clicked
+//display the previous image when the previous-button is clicked
 previousButton.addEventListener('click', () => {
     nextButton.disabled = false;
     i --;

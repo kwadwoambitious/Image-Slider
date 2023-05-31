@@ -1,8 +1,11 @@
+/* remove all default styling */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* body styling */
 body{
   height: 100vh;
   display: flex;
@@ -11,27 +14,30 @@ body{
   justify-content: center;
   background-color: #222;
 }
+
+/* page heading styling */
 h1{
   font-size: 2.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 25px;
   color: white;
 }
-.card{
+
+/* image styling */
+.image img{
   max-width: 600px;
+  object-fit: cover;
   width: 100%;
   height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: 2px;
-  font-size: 3rem;
+  border: 5px solid white;
 }
-.cards-container .buttons{
-   margin-top: 30px;
+
+/* buttons container styling */
+.images-container .buttons{
+   margin-top: 15px;
 }
+
+/* buttons styling */
 .previous-button, .next-button{
   border: none;
   font-size: 1.3rem;
@@ -41,17 +47,23 @@ h1{
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/* previous button styling */
 .previous-button{
   margin-right: 50px;
 }
-.cards-container{
+
+/* images container styling */
+.images-container{
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
+
+/* media query for 320px and below */
 @media (max-width: 320px){
-  .card{
+  .image img{
     height: 300px;
     font-size: 2.5rem;
   }
